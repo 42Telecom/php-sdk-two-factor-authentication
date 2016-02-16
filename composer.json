@@ -1,0 +1,26 @@
+{
+    "name": "fortytwo/2fa",
+    "description": "Fortytwo.com 2FA SDKs",
+    "license": "MIT",
+    "keywords": ["2FA","Two factor authentication","2 Factori authentication","fortytwo"],
+    "authors": [
+        {
+            "name": "Sebastien Lemarinel",
+            "email": "sebastien.lemarinel@42tele.com",
+            "homepage": "https://www.fortytwo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "jms/serializer": "^1.1",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "fortytwo\\TwoFactorAuthentication\\": "src"
+        }
+    }
+}
