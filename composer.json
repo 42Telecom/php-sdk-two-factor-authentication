@@ -1,8 +1,8 @@
 {
     "name": "fortytwo/2fa",
-    "description": "Fortytwo.com 2FA SDKs",
+    "description": "Fortytwo’s Two-Factor Authentication (2FA) API adds an additional layer of security to your users’ login credentials with a unique one-time code which limits the risk of fraudulent access to your website.",
     "license": "MIT",
-    "keywords": ["2FA","Two factor authentication","2 Factori authentication","fortytwo"],
+    "keywords": ["2FA","Two factor authentication","2 Factor authentication","fortytwo"],
     "authors": [
         {
             "name": "Sebastien Lemarinel",
