@@ -15,11 +15,9 @@ Using [composer](https://getcomposer.org/):
 
 You can download the library from the Fortytwo Telecom website or on our official Github repository.
 
-_[todo]_
-
 ## Testing:
 
-Execute the following command on the main directory:
+Execute the following command on the project directory:
 ```
 vendor/bin/phpunit -c tests/Phpunit.xml
 ```
