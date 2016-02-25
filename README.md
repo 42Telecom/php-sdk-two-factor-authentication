@@ -8,12 +8,12 @@ This SDK help you to use the Two Factor Authentication service from [FortyTwo Te
 ### With composer:
 Using [composer](https://getcomposer.org/):
 ```
-    composer require fortytwotelecom/sdk-2fa
+    composer require fortytwo/php-sdk-two-factor-authentication
 ```
 
 ### directly:
 
-You can download the library from the Fortytwo Telecom website or on our official Github repository.
+You can download the library from the [Fortytwo Telecom website](https://www.fortytwo.com/developers/) or on our [official Github repository](https://github.com/42Telecom/php-sdk-two-factor-authentication).
 
 ## Testing:
 
