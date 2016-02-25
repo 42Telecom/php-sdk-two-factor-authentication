@@ -1,14 +1,14 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
-use fortytwo\TwoFactorAuthentication\ResponseResultInfo;
+use Fortytwo\SDK\TwoFactorAuthentication\ResponseResultInfo;
 
 class ResponseResultInfoTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiateResponseResultInfo()
     {
         // Assert
-        $this->assertInstanceOf('fortytwo\TwoFactorAuthentication\ResponseResultInfo', new ResponseResultInfo());
+        $this->assertInstanceOf('Fortytwo\SDK\TwoFactorAuthentication\ResponseResultInfo', new ResponseResultInfo());
     }
 
     public function testMessageId()

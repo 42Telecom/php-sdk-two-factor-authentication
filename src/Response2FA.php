@@ -1,13 +1,13 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
 // Import JMS Serializer
 use JMS\Serializer\Annotation\Type;
 // Import the HTTP client
 use Buzz\Message\Response;
 // Import SKD related
-use fortytwo\TwoFactorAuthentication\ResponseResultInfo;
-use fortytwo\TwoFactorAuthentication\ResponseResult;
+use Fortytwo\SDK\TwoFactorAuthentication\ResponseResultInfo;
+use Fortytwo\SDK\TwoFactorAuthentication\ResponseResult;
 
 /**
  * Response object used to store/manipulate data fron the response of a "request code" .
@@ -21,12 +21,12 @@ class Response2FA
      */
     private $apiJobId;
     /**
-     * @Type("fortytwo\TwoFactorAuthentication\ResponseResultInfo")
+     * @Type("Fortytwo\SDK\TwoFactorAuthentication\ResponseResultInfo")
      */
     private $resultInfo;
 
     /**
-     * @Type("fortytwo\TwoFactorAuthentication\ResponseResult")
+     * @Type("Fortytwo\SDK\TwoFactorAuthentication\ResponseResult")
      */
     private $result;
 

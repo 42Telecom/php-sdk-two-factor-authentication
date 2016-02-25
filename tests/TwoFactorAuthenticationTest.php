@@ -1,7 +1,7 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
-use fortytwo\TwoFactorAuthentication\TwoFactorAuthentication;
+use Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -15,7 +15,7 @@ class TwoFactorAuthenticationTest extends \PHPUnit_Framework_TestCase
     {
         // Assert
         $this->assertInstanceOf(
-            'fortytwo\TwoFactorAuthentication\TwoFactorAuthentication',
+            'Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication',
             new TwoFactorAuthentication('mySuperToken')
         );
     }

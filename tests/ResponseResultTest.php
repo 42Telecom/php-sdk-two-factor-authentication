@@ -1,14 +1,14 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
-use fortytwo\TwoFactorAuthentication\ResponseResult;
+use Fortytwo\SDK\TwoFactorAuthentication\ResponseResult;
 
 class ResponseResultTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiateResponseResult()
     {
         // Assert
-        $this->assertInstanceOf('fortytwo\TwoFactorAuthentication\ResponseResult', new ResponseResult());
+        $this->assertInstanceOf('Fortytwo\SDK\TwoFactorAuthentication\ResponseResult', new ResponseResult());
     }
 
     public function testStatusCode()

@@ -1,14 +1,14 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
-use fortytwo\TwoFactorAuthentication\RequestCode;
+use Fortytwo\SDK\TwoFactorAuthentication\RequestCode;
 
 class RequestCodeTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiateRequestCode()
     {
         // Assert
-        $this->assertInstanceOf('fortytwo\TwoFactorAuthentication\RequestCode', new RequestCode());
+        $this->assertInstanceOf('Fortytwo\SDK\TwoFactorAuthentication\RequestCode', new RequestCode());
     }
 
     public function testSetClientRef()

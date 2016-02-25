@@ -1,12 +1,12 @@
 {
-    "name": "fortytwo/2fa",
+    "name": "fortytwo/php-sdk-two-factor-authentication",
     "description": "Fortytwo’s Two-Factor Authentication (2FA) API adds an additional layer of security to your users’ login credentials with a unique one-time code which limits the risk of fraudulent access to your website.",
     "license": "MIT",
     "keywords": ["2FA","Two factor authentication","2 Factor authentication","fortytwo"],
     "authors": [
         {
             "name": "Sebastien Lemarinel",
-            "email": "sebastien.lemarinel@42tele.com",
+            "email": "sebastien.lemarinel@fortytwo.com",
             "homepage": "https://www.fortytwo.com"
         }
     ],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "fortytwo\\TwoFactorAuthentication\\": "src"
+            "Fortytwo\\SDK\\TwoFactorAuthentication\\": "src"
         }
     }
 }
