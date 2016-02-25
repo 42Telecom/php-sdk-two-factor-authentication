@@ -47,7 +47,7 @@ class TwoFactorAuthentication
      * Request the authentication code
      *
      * @api
-     * @param $cleintRef string Client reference
+     * @param $clientRef string Client reference
      * @param $phoneNumber string Destination Phone number
      * @param $optionaArgs array List of optionals arguments
      *
@@ -84,7 +84,7 @@ class TwoFactorAuthentication
     }
 
     /**
-     * Validate autnehtication with the code
+     * Validate authentication with the code
      *
      * @api
      * @param $clientRef string Client reference

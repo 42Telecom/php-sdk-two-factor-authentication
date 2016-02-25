@@ -105,7 +105,7 @@ class RequestCode
     }
 
     /**
-     * Get the current phone number
+     * Get the current code length
      *
      * @return string current code length
      */
@@ -118,7 +118,7 @@ class RequestCode
      * Set the code length
      *
      * @param integer $value between 6 and 20
-     * @throws Exception fi the code length is not between the default and max lenght defined.
+     * @throws Exception if the code length is not between the default and max lenght defined.
      * @return the current instance
      */
     public function setCodeLength($value)
@@ -276,11 +276,12 @@ class RequestCode
     }
 
     /**
-     * Set variables
+     * Set the available variables in the object
      *
      * @param Variable $variableName name to set
+     * @param Variable $value value to set
      * @throws Exception if the variable name is not authorized
-     * @param $value        Value
+     * @return the current instance
      */
     public function set($variableName, $value)
     {
