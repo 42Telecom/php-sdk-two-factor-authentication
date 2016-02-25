@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## Version 1.0.*
+_2016-02-25_
+- **[IMPROVEMENT]** : Doing some cleaning in the syntax.
+
 ## Version 1.0.3
 _2016-02-25_
 - **[IMPROVEMENT]** : Update README file.
