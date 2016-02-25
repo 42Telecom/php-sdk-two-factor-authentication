@@ -5,7 +5,7 @@ CHANGELOG
 _2016-02-25_
 - **[IMPROVEMENT]** : Update README file.
 
-## Version 1.0.3
+## Version 1.0.2
 _2016-02-25_
 - **[IMPROVEMENT]** : Update comments in the code.
 - **[IMPROVEMENT]** : Remove useless line of code.
