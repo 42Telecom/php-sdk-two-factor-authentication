@@ -94,8 +94,6 @@ class TwoFactorAuthentication
      */
     public function validateCode($clientRef, $code)
     {
-        $requestCode = new RequestCode;
-
         $response = $this->client->request(
             'POST',
             self::API_URL .
