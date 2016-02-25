@@ -97,8 +97,8 @@ class TwoFactorAuthentication
         $response = $this->client->request(
             'POST',
             self::API_URL .
-            self::API_2FA_RESSOURCE . "/".
-            filter_var($clientRef, FILTER_SANITIZE_URL). "/".
+            self::API_2FA_RESSOURCE . '/' .
+            filter_var($clientRef, FILTER_SANITIZE_URL). '/' .
             filter_var($code, FILTER_SANITIZE_URL)
         );
 

@@ -10,7 +10,7 @@ use Fortytwo\SDK\TwoFactorAuthentication\ResponseResultInfo;
 use Fortytwo\SDK\TwoFactorAuthentication\ResponseResult;
 
 /**
- * Response object used to store/manipulate data fron the response of a "request code" .
+ * Response object used to store/manipulate data fron the response of a 'request code' .
  *
  * @license https://opensource.org/licenses/MIT MIT
  */

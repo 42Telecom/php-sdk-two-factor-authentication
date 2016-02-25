@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 
 /**
- * Request object used to store/manipulate/validate the data of the "request code" .
+ * Request object used to store/manipulate/validate the data of the 'request code' .
  *
  * @ExclusionPolicy("all")
  * @license https://opensource.org/licenses/MIT MIT
@@ -17,9 +17,9 @@ class RequestCode
     const CODE_LENGTH_DEFAULT           = 6;
     const CODE_LENGTH_MAX               = 20;
     // Define possible values for the code type.
-    const CODE_TYPE_NUMERIC             = "numeric";
-    const CODE_TYPE_ALPHA               = "alpha";
-    const CODE_TYPE_ALPHANUMERIC        = "alphanumeric";
+    const CODE_TYPE_NUMERIC             = 'numeric';
+    const CODE_TYPE_ALPHA               = 'alpha';
+    const CODE_TYPE_ALPHANUMERIC        = 'alphanumeric';
     // Define send id limitations
     const SENDER_ID_NUMERIC_MAX         = 15;
     const SENDER_ID_ALPHANUMERIC_MAX    = 11;
@@ -296,7 +296,7 @@ class RequestCode
         );
 
         if (in_array($variableName, $authorizedSetters)) {
-            $name = "set" . ucfirst($variableName);
+            $name = 'set' . ucfirst($variableName);
             $this->$name($value);
         } else {
             throw new \Exception('No setter for ' . $variableName . '.');
