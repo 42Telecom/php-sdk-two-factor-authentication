@@ -1,9 +1,9 @@
 <?php
 
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
-use fortytwo\TwoFactorAuthentication\RequestCode;
-use fortytwo\TwoFactorAuthentication\ReponseRequestCode;
+use Fortytwo\SDK\TwoFactorAuthentication\RequestCode;
+use Fortytwo\SDK\TwoFactorAuthentication\ReponseRequestCode;
 use JMS\Serializer\SerializerBuilder;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
@@ -77,7 +77,7 @@ class TwoFactorAuthentication
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
             $response->getBody(),
-            'fortytwo\TwoFactorAuthentication\Response2FA',
+            'Fortytwo\SDK\TwoFactorAuthentication\Response2FA',
             'json'
         );
         return $result;
@@ -107,7 +107,7 @@ class TwoFactorAuthentication
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
             $response->getBody(),
-            'fortytwo\TwoFactorAuthentication\Response2FA',
+            'Fortytwo\SDK\TwoFactorAuthentication\Response2FA',
             'json'
         );
         return $result;

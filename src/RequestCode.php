@@ -1,5 +1,5 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\Annotation\ExclusionPolicy;

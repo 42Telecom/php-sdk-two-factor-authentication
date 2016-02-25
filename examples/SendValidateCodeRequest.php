@@ -20,7 +20,7 @@ Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
 );
 
 try {
-    $validateCode = new \fortytwo\TwoFactorAuthentication\TwoFactorAuthentication('mytoken');
+    $validateCode = new \Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication('mytoken');
     $response = $validateCode->validateCode('reference1', '123456');
 } catch (\Exception $e) {
     echo $e->getMessage();
