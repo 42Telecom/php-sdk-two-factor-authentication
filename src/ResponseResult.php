@@ -1,5 +1,5 @@
 <?php
-namespace fortytwo\TwoFactorAuthentication;
+namespace Fortytwo\SDK\TwoFactorAuthentication;
 
 // Import JMS Serializer
 use JMS\Serializer\Annotation\Type;

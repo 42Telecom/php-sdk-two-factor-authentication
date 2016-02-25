@@ -21,7 +21,7 @@ Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
 );
 
 try {
-    $sendCodeRequest = new \fortytwo\TwoFactorAuthentication\TwoFactorAuthentication('mytoken');
+    $sendCodeRequest = new \Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication('mytoken');
     $response = $sendCodeRequest->requestCode(
         "clientRef",
         "35699982888",
