@@ -1,11 +1,20 @@
 CHANGELOG
 =========
 
-## Version 1.0.3
+## Version 1.1.0
+_2016-04-19_
+- **[IMPROVEMENT]** : Doing some cleaning in the syntax.
+- **[IMPROVEMENT]** : Add token pre-validation before sending request.
+
+## Version 1.0.4
 _2016-02-25_
 - **[IMPROVEMENT]** : Update README file.
 
 ## Version 1.0.3
+_2016-02-25_
+- **[IMPROVEMENT]** : Update README file.
+
+## Version 1.0.2
 _2016-02-25_
 - **[IMPROVEMENT]** : Update comments in the code.
 - **[IMPROVEMENT]** : Remove useless line of code.

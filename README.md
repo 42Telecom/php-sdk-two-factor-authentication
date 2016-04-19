@@ -1,5 +1,5 @@
-TWO FACTOR AUTHENTICATION
-===========================
+TWO FACTOR AUTHENTICATION FOR FORTYTWO
+=======================================
 
 This SDK help you to use the Two Factor Authentication service from [FortyTwo Telecom](http://www.fortytwo.com)
 
