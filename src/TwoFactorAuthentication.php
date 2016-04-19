@@ -4,6 +4,7 @@ namespace Fortytwo\SDK\TwoFactorAuthentication;
 
 use Fortytwo\SDK\TwoFactorAuthentication\RequestCode;
 use Fortytwo\SDK\TwoFactorAuthentication\ReponseRequestCode;
+use Fortytwo\SDK\TwoFactorAuthentication\Values\TokenValue;
 use JMS\Serializer\SerializerBuilder;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
@@ -32,7 +33,7 @@ class TwoFactorAuthentication
             'headers' => [
                 'User-Agent' => 'Fortytwo SDK - 2FA - 1.0.0',
                 'Content-Type'     => 'application/json; charset=utf-8',
-                'Authorization'      => 'Token ' . $token
+                'Authorization'      => 'Token ' . new TokenValue($token)
             ],
         ];
 

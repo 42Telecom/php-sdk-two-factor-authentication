@@ -11,12 +11,27 @@ use GuzzleHttp\Exception\RequestException;
 
 class TwoFactorAuthenticationTest extends \PHPUnit_Framework_TestCase
 {
-    public function testInstantiateTwoFactorAuthentication()
+    private $validToken = '9899948e-f37e-4b34-95d6-db0f9d2fb943';
+    private $invalidToken = 'mySuperInvalidToken';
+
+    public function testInstantiateTwoFactorAuthenticationValidToken()
     {
         // Assert
         $this->assertInstanceOf(
             'Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication',
-            new TwoFactorAuthentication('mySuperToken')
+            new TwoFactorAuthentication($this->validToken)
+        );
+    }
+
+    /**
+     * @expectedException Exception
+     */
+    public function testInstantiateTwoFactorAuthenticationInvalidToken()
+    {
+        // Assert
+        $this->assertInstanceOf(
+            'Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication',
+            new TwoFactorAuthentication($this->invalidToken)
         );
     }
 
