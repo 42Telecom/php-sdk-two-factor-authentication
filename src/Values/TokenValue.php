@@ -10,12 +10,24 @@ use Fortytwo\SDK\TwoFactorAuthentication\Interfaces\ValueInterface;
  */
 class TokenValue implements ValueInterface
 {
+    /**
+     * @var string
+     */
     private $token;
 
+    /**
+     * @var string
+     */
     private $tempValue;
 
+    /**
+     * @var string
+     */
     private $regex = "/^([a-z0-9]*-[a-z0-9]*-[a-z0-9]*-[a-z0-9]*-[a-z0-9]*)$/";
 
+    /**
+     * @inheritDoc
+     */
     public function __construct($value)
     {
         $this->tempValue = $value;
@@ -28,11 +40,19 @@ class TokenValue implements ValueInterface
 
     }
 
+    /**
+     * @inheritDoc
+     */
     public function __toString()
     {
         return $this->token;
     }
 
+    /**
+     * Sanitize the value.
+     *
+     * @return $this the current instance
+     */
     private function sanitize()
     {
         $this->tempValue = trim($this->tempValue);
@@ -40,6 +60,11 @@ class TokenValue implements ValueInterface
         return $this;
     }
 
+    /**
+     * Validate the value.
+     *
+     * @return $this the current instance
+     */
     private function validate()
     {
         if (!preg_match($this->regex, $this->tempValue)) {
