@@ -2,48 +2,18 @@
 
 namespace Fortytwo\SDK\TwoFactorAuthentication;
 
+use Fortytwo\SDK\Core\Core;
+use Fortytwo\SDK\Core\Factories\ServiceFactory;
 use Fortytwo\SDK\TwoFactorAuthentication\RequestCode;
-use Fortytwo\SDK\TwoFactorAuthentication\ReponseRequestCode;
-use Fortytwo\SDK\TwoFactorAuthentication\Values\TokenValue;
 use JMS\Serializer\SerializerBuilder;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 
 /**
  * TwoFactorAuthentication Main class for the library.
  *
  * @license https://opensource.org/licenses/MIT MIT
  */
-class TwoFactorAuthentication
+class TwoFactorAuthentication extends Core
 {
-    private $client;
-    const API_URL = 'https://rest.fortytwo.com/1/';
-    const API_2FA_RESSOURCE = '2fa';
-
-    /**
-     * CONTSTRUCTOR - Initalize the Request object and define the headers
-     *
-     * @api
-     * @param $token client token for authentication
-     * @param $handler for testing purposes
-     */
-    public function __construct($token, $handler = false)
-    {
-        $client = [
-            'headers' => [
-                'User-Agent' => 'Fortytwo SDK - 2FA - 1.0.0',
-                'Content-Type'     => 'application/json; charset=utf-8',
-                'Authorization'      => 'Token ' . new TokenValue($token)
-            ],
-        ];
-
-        if ($handler) {
-            $client['handler'] =  $handler;
-        }
-
-        $this->client = new Client($client);
-    }
-
     /**
      * Request the authentication code
      *
@@ -52,10 +22,12 @@ class TwoFactorAuthentication
      * @param $phoneNumber string Destination Phone number
      * @param $optionaArgs array List of optionals arguments
      *
-     * @return Response Object
+     * @return object response
      */
     public function requestCode($clientRef, $phoneNumber, $optionalArgs = array())
     {
+        $api = ServiceFactory::get('TFA/Request');
+
         $requestCode = new RequestCode;
         $requestCode
             ->setClientRef($clientRef)
@@ -68,8 +40,8 @@ class TwoFactorAuthentication
         }
 
         $response = $this->client->request(
-            'POST',
-            self::API_URL.self::API_2FA_RESSOURCE,
+            $api->getMethod(),
+            $api->getEndPoint(),
             [
                 'body' => $requestCode->toJSON()
             ]
@@ -91,14 +63,15 @@ class TwoFactorAuthentication
      * @param $clientRef string Client reference
      * @param $code string Code to validate
      *
-     * @return Response Object
+     * @return object Response
      */
     public function validateCode($clientRef, $code)
     {
+        $api = ServiceFactory::get('TFA/Validate');
+
         $response = $this->client->request(
-            'POST',
-            self::API_URL .
-            self::API_2FA_RESSOURCE . '/' .
+            $api->getMethod(),
+            $api->getEndPoint() . '/' .
             filter_var($clientRef, FILTER_SANITIZE_URL). '/' .
             filter_var($code, FILTER_SANITIZE_URL)
         );
