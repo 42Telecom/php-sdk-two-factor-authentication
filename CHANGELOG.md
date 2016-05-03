@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## Version 1.2.0
+_2016-05-03_
+- **[IMPROVEMENT]** : Add dependency with Fortytwo PHP SDK Core.
+
 ## Version 1.1.0
 _2016-04-19_
 - **[IMPROVEMENT]** : Doing some cleaning in the syntax.
