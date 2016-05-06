@@ -3,7 +3,6 @@
 namespace Fortytwo\SDK\TwoFactorAuthentication;
 
 use Fortytwo\SDK\Core\Core;
-use Fortytwo\SDK\Core\Factories\ServiceFactory;
 use Fortytwo\SDK\TwoFactorAuthentication\RequestCode;
 use JMS\Serializer\SerializerBuilder;
 
@@ -18,16 +17,14 @@ class TwoFactorAuthentication extends Core
      * Request the authentication code
      *
      * @api
-     * @param $clientRef string Client reference
-     * @param $phoneNumber string Destination Phone number
-     * @param $optionaArgs array List of optionals arguments
+     * @param string $clientRef     Client reference
+     * @param string $phoneNumber   Destination Phone number
+     * @param array  $optionalArgs   List of optionals arguments
      *
      * @return object response
      */
     public function requestCode($clientRef, $phoneNumber, $optionalArgs = array())
     {
-        $api = ServiceFactory::get('TFA/Request');
-
         $requestCode = new RequestCode;
         $requestCode
             ->setClientRef($clientRef)
@@ -39,13 +36,7 @@ class TwoFactorAuthentication extends Core
             }
         }
 
-        $response = $this->client->request(
-            $api->getMethod(),
-            $api->getEndPoint(),
-            [
-                'body' => $requestCode->toJSON()
-            ]
-        );
+        $response = $this->request('TFA/Request', array(), $requestCode);
 
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
@@ -60,21 +51,14 @@ class TwoFactorAuthentication extends Core
      * Validate authentication with the code
      *
      * @api
-     * @param $clientRef string Client reference
-     * @param $code string Code to validate
+     * @param string $clientRef Client reference
+     * @param string $code      Code to validate
      *
      * @return object Response
      */
     public function validateCode($clientRef, $code)
     {
-        $api = ServiceFactory::get('TFA/Validate');
-
-        $response = $this->client->request(
-            $api->getMethod(),
-            $api->getEndPoint() . '/' .
-            filter_var($clientRef, FILTER_SANITIZE_URL). '/' .
-            filter_var($code, FILTER_SANITIZE_URL)
-        );
+        $response = $this->request('TFA/Validate', array($clientRef, $code));
 
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
