@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## Version 1.3.0
-_2016-05-03_
+_2016-05-10_
 - **[IMPROVEMENT]** : Use the Php SDK Core 1.1.0.
 
 ## Version 1.2.0
