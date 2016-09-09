@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## Version 1.3.1
+_2016-09-09_
+- **[BUG]** : Fix a bug with the processing of the response with the last version of the Core SDK.
+
 ## Version 1.3.0
 _2016-05-10_
 - **[IMPROVEMENT]** : Use the Php SDK Core 1.1.0.
