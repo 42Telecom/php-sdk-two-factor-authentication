@@ -40,7 +40,7 @@ class TwoFactorAuthentication extends Core
 
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
-            $response->getBody(),
+            $response,
             'Fortytwo\SDK\TwoFactorAuthentication\Response2FA',
             'json'
         );
@@ -62,7 +62,7 @@ class TwoFactorAuthentication extends Core
 
         $serializer = SerializerBuilder::create()->build();
         $result = $serializer->deserialize(
-            $response->getBody(),
+            $response,
             'Fortytwo\SDK\TwoFactorAuthentication\Response2FA',
             'json'
         );
