@@ -44,6 +44,7 @@ class TwoFactorAuthentication extends Core
             'Fortytwo\SDK\TwoFactorAuthentication\Response2FA',
             'json'
         );
+
         return $result;
     }
 
