@@ -14,46 +14,80 @@ use JMS\Serializer\Annotation\Expose;
 class RequestCode
 {
     // Define default values for the code length.
+    /**
+     * @var int CODE_LENGTH_DEFAULT Code default value for the max length.
+     */
     const CODE_LENGTH_DEFAULT           = 6;
+    /**
+     * @var int CODE_LENGTH_MAX Code max length.
+     */
     const CODE_LENGTH_MAX               = 20;
-    // Define possible values for the code type.
+    /**
+     * @var string CODE_TYPE_NUMERIC numeric value.
+     */
     const CODE_TYPE_NUMERIC             = 'numeric';
+    /**
+     * @var string CODE_TYPE_ALPHA alpha value.
+     */
     const CODE_TYPE_ALPHA               = 'alpha';
+    /**
+     * @var string CODE_TYPE_ALPHANUMERIC alphanumeric value.
+     */
     const CODE_TYPE_ALPHANUMERIC        = 'alphanumeric';
-    // Define send id limitations
+    /**
+     * @var int SENDER_ID_NUMERIC_MAX Max length value for the Numeric format.
+     */
     const SENDER_ID_NUMERIC_MAX         = 15;
+    /**
+     * @var int SENDER_ID_ALPHANUMERIC_MAX Max length value for the Alphanumeric format.
+     */
     const SENDER_ID_ALPHANUMERIC_MAX    = 11;
 
     // define internals variables
     /**
      * @Expose
+     * @var string $clientRef Client Reference.
      */
     private $clientRef      = null;
     /**
      * @Expose
+     * @var string $phoneNumber Phone number.
      */
     private $phoneNumber    = null;
     /**
      * @Expose
+     * @var int $codeLength Code Length.
      */
     private $codeLength     = self::CODE_LENGTH_DEFAULT;
     /**
      * @Expose
+     * @var string $codeType Code Type.
      */
     private $codeType       = self::CODE_TYPE_NUMERIC;
     /**
      * @Expose
+     * @var bool $caseSensitive Case Sensitive.
      */
     private $caseSensitive  = null;
     /**
      * @Expose
+     * @var string $callbackUrl Callback URL.
      */
     private $callbackUrl    = null;
     /**
      * @Expose
+     * @var string $senderId Sender ID.
      */
     private $senderId       = null;
+    /**
+     * @Expose
+     * @var string $messageTemplate Message Template.
+     */
+    private $messageTemplate = null;
 
+    /**
+     * @var array $codeTypeList List of code format supported by 2FA API.
+     */
     private $codeTypeList   = array(
         self::CODE_TYPE_NUMERIC,
         self::CODE_TYPE_ALPHA,
@@ -61,9 +95,9 @@ class RequestCode
     );
 
     /**
-     * Get the current client reference
+     * Get the current client reference.
      *
-     * @return string current client reference
+     * @return string current client reference.
      */
     public function getClientRef()
     {
@@ -71,10 +105,10 @@ class RequestCode
     }
 
     /**
-     * Set the client reference
+     * Set the client reference.
      *
-     * @param string $value client reference
-     * @return the current instance
+     * @param string $value client reference.
+     * @return object the current instance.
      */
     public function setClientRef($value)
     {
@@ -83,9 +117,9 @@ class RequestCode
     }
 
     /**
-     * Get the current phone number
+     * Get the current phone number.
      *
-     * @return string current phone number
+     * @return string current phone number.
      */
     public function getPhoneNumber()
     {
@@ -93,10 +127,10 @@ class RequestCode
     }
 
     /**
-     * Set the phone number
+     * Set the phone number.
      *
-     * @param string $value phone number
-     * @return the current instance
+     * @param string $value phone number.
+     * @return object the current instance.
      */
     public function setPhoneNumber($value)
     {
@@ -105,9 +139,9 @@ class RequestCode
     }
 
     /**
-     * Get the current code length
+     * Get the current code length.
      *
-     * @return string current code length
+     * @return string current code length.
      */
     public function getCodeLength()
     {
@@ -115,11 +149,11 @@ class RequestCode
     }
 
     /**
-     * Set the code length
+     * Set the code length.
      *
-     * @param integer $value between 6 and 20
-     * @throws Exception if the code length is not between the default and max lenght defined.
-     * @return the current instance
+     * @param int $value between 6 and 20.
+     * @throws \Exception if the code length is not between the default and max lenght defined.
+     * @return object the current instance.
      */
     public function setCodeLength($value)
     {
@@ -142,9 +176,9 @@ class RequestCode
     }
 
     /**
-     * Get the current code type
+     * Get the current code type.
      *
-     * @return string current code type
+     * @return string current code type.
      */
     public function getCodeType()
     {
@@ -152,11 +186,11 @@ class RequestCode
     }
 
     /**
-     * Set the code type (default numeric)
+     * Set the code type (default numeric).
      *
-     * @param string $value code type (numeric,alpha or alphanumeric)
-     * @throws Exception if the parameter is not in the options available
-     * @return the current instance
+     * @param string $value code type (numeric,alpha or alphanumeric).
+     * @throws \Exception if the parameter is not in the options available.
+     * @return object the current instance.
      */
     public function setCodeType($value)
     {
@@ -170,9 +204,9 @@ class RequestCode
     }
 
     /**
-     * Get the current case sensitive value
+     * Get the current case sensitive value.
      *
-     * @return boolean case sensitive value
+     * @return bool case sensitive value.
      */
     public function getCaseSensitive()
     {
@@ -180,11 +214,11 @@ class RequestCode
     }
 
     /**
-     * Set the case sensitive option
+     * Set the case sensitive option.
      *
-     * @param boolean $value true or false.
-     * @throws Exception if the passed parameter is not a boolean
-     * @return the current instance
+     * @param bool $value true or false.
+     * @throws \Exception if the passed parameter is not a boolean.
+     * @return object the current instance.
      */
     public function setCaseSensitive($value)
     {
@@ -199,9 +233,9 @@ class RequestCode
     }
 
     /**
-     * Get the callback URL
+     * Get the callback URL.
      *
-     * @return string Callback url
+     * @return string Callback url.
      */
     public function getCallbackUrl()
     {
@@ -209,11 +243,11 @@ class RequestCode
     }
 
     /**
-     * Set the Callback URL
+     * Set the Callback URL.
      *
-     * @param string $value Callback url
-     * @throws Exception if the URL is not valid.
-     * @return the current instance
+     * @param string $value Callback url.
+     * @throws \Exception if the URL is not valid.
+     * @return object the current instance.
      */
     public function setCallbackUrl($value)
     {
@@ -229,7 +263,7 @@ class RequestCode
     /**
      * Get the current sender ID.
      *
-     * @return string sender ID
+     * @return string sender ID.
      */
     public function getSenderId()
     {
@@ -237,11 +271,11 @@ class RequestCode
     }
 
     /**
-     * Set the sender ID
+     * Set the sender ID.
      *
-     * @param string $value Sender ID
-     * @throws Exception if the senderid is to long or is not an numeric/alphanumeric
-     * @return the current instance
+     * @param string $value Sender ID.
+     * @throws \Exception if the senderid is to long or is not an numeric/alphanumeric.
+     * @return object the current instance.
      */
     public function setSenderId($value)
     {
@@ -264,9 +298,37 @@ class RequestCode
     }
 
     /**
+     * Get the current Message Template.
+     *
+     * @return string sender ID.
+     */
+    public function getMessageTemplate()
+    {
+        return $this->messageTemplate;
+    }
+
+    /**
+     * Set the Message Template.
+     *
+     * @param string $messageTemplate Message template.
+     * @throws \Exception if the message doesn't contain the placeholder {#TFA_CODE}.
+     * @return object the current instance.
+     */
+    public function setMessageTemplate($messageTemplate)
+    {
+        if (strpos($messageTemplate, '{#TFA_CODE}')) {
+            $this->messageTemplate = $messageTemplate;
+        } else {
+            throw new \Exception('Placeholder {#TFA_CODE} missing.');
+        }
+
+        return $this;
+    }
+
+    /**
      * Convert the current object to JSON format.
      *
-     * @return JSON serialized object
+     * @return string JSON serialized object.
      */
     public function toJSON()
     {
@@ -276,12 +338,12 @@ class RequestCode
     }
 
     /**
-     * Set the available variables in the object
+     * Set the available variables in the object.
      *
-     * @param Variable $variableName name to set
-     * @param Variable $value value to set
-     * @throws Exception if the variable name is not authorized
-     * @return the current instance
+     * @param string $variableName name to set.
+     * @param string $value value to set.
+     * @throws \Exception if the variable name is not authorized.
+     * @return object the current instance.
      */
     public function set($variableName, $value)
     {
@@ -292,7 +354,8 @@ class RequestCode
             'codeType',
             'caseSensitive',
             'callbackUrl',
-            'senderId'
+            'senderId',
+            'messageTemplate'
         );
 
         if (in_array($variableName, $authorizedSetters)) {
