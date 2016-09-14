@@ -24,12 +24,14 @@ try {
     $sendCodeRequest = new \Fortytwo\SDK\TwoFactorAuthentication\TwoFactorAuthentication('mytoken');
     $response = $sendCodeRequest->requestCode(
         "clientRef",
-        "35699982888",
+        "88000000",
         array(
             "codeType" => "alphanumeric",
             "codeLength" => "10"
         )
     );
+
+    print_r("Job ID:" . $response->getApiJobId() . " / Message:" . $response->getResultInfo()->getDescription());
 } catch (\Exception $e) {
     echo $e->getMessage();
 }

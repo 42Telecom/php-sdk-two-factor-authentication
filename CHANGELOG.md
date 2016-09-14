@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+
+## Version 1.4.0
+_2016-09-14_
+- **[IMPROVEMENT]** : Add support for the new Template Model parameter.
+
+
 ## Version 1.3.1
 _2016-09-09_
 - **[BUG]** : Fix a bug with the processing of the response with the last version of the Core SDK.
