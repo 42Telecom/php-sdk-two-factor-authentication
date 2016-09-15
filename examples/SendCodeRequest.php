@@ -26,8 +26,12 @@ try {
         "clientRef",
         "88000000",
         array(
-            "codeType" => "alphanumeric",
-            "codeLength" => "10"
+            "codeType"          => "alphanumeric",
+            "codeLength"        => "10",
+            "caseSensitive"     => true,
+            "callbackUrl"       => "https://www.fortytwo.com/callback",
+            "senderId"          => "Mycompany signup",
+            "messageTemplate"   => "your signup code is: {#TFA_CODE}"
         )
     );
 
